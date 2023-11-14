@@ -36,7 +36,7 @@ body * {
     font-family: var(--ff-primary);   
 }
 
-.app header {
+#app header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -101,7 +101,7 @@ body * {
     fill: var(--text-btn-color);
 }
 
-.app button:hover,
+#app button:hover,
 .action button:hover {
     filter: brightness(1.2);
 }
@@ -179,4 +179,14 @@ td.action button {
     justify-content: center;
     gap: 6.0rem; 
     padding: 10.0rem;
+
+    
+}
+
+.no-favorite span {
+    font-family: var(--ff-secundary);
+    color: var(--no-table-color);
+    font-size: 4.0rem;
+    font-weight: 700;
+    line-height: 2.5rem;
 }

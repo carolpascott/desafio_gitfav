@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script type="module" src="/js/main.js" defer></script>
 </head>
 <body>
-    <div class="app">
+    <div id="app"> 
         <header>
             <img src="/assets/git_fav.svg" alt="Logo GitFav">
             <div class="search">
@@ -30,64 +32,64 @@
             </div>
 
         </header>
-    </div>
-    <div class="table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Usuário</th>
-                    <th>Repositórios</th>
-                    <th>Seguidores</th>
-                    <th>Ação</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="user">
-                        <img src="https://github.com/carolpascott.png" alt="Imagem de carolpascott">
-                        <a href="https://github.com/carolpascott" target="_blank">
-                            <p>Carol Pascott</p>
-                            <span>carolpascott</span>
-                        </a>
-                    </td>
-                    <td class="repositories">xx</td>
-                    <td class="followers">xx</td>
-                    <td class="action"><button>Remover</button></td>
-                </tr>
-                <tr>
-                    <td class="user">
-                        <img src="https://github.com/carolpascott.png" alt="Imagem de carolpascott">
-                        <a href="https://github.com/carolpascott" target="_blank">
-                            <p>Carol Pascott</p>
-                            <span>/carolpascott</span>
-                        </a>
-                    </td>
-                    <td class="repositories">xx</td>
-                    <td class="followers">xx</td>
-                    <td class="action"><button>Remover</button></td>
-                </tr>
-                <tr>
-                    <td class="user">
-                        <img src="https://github.com/carolpascott.png" alt="Imagem de carolpascott">
-                        <a href="https://github.com/carolpascott" target="_blank">
-                            <p>Carol Pascott</p>
-                            <span>/carolpascott</span>
-                        </a>
-                    </td>
-                    <td class="repositories">xx</td>
-                    <td class="followers">xx</td>
-                    <td class="action"><button>Remover</button></td>
-                </tr>  
-                <!-- <tr class="no-favorite">
-                    <td colspan="4">
-                        <div class="no-favorite-image">
-                            <img src="/assets/star.svg" alt="imagem de uma estrela com expressão de inconformada">
-                            Nenhum favorito ainda
-                        </div>
-                    </td>                                   
-                </tr>    -->
-            </tbody>
-        </table>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Repositórios</th>
+                        <th>Seguidores</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="user">
+                            <img src="https://github.com/carolpascott.png" alt="Imagem de carolpascott">
+                            <a href="https://github.com/carolpascott" target="_blank">
+                                <p>Carol Pascott</p>
+                                <span>carolpascott</span>
+                            </a>
+                        </td>
+                        <td class="repositories">xx</td>
+                        <td class="followers">xx</td>
+                        <td class="action"><button>Remover</button></td>
+                    </tr>
+                    <tr>
+                        <td class="user">
+                            <img src="https://github.com/carolpascott.png" alt="Imagem de carolpascott">
+                            <a href="https://github.com/carolpascott" target="_blank">
+                                <p>Carol Pascott 01</p>
+                                <span>/carolpascott</span>
+                            </a>
+                        </td>
+                        <td class="repositories">xx</td>
+                        <td class="followers">xx</td>
+                        <td class="action"><button>Remover</button></td>
+                    </tr>
+                    <tr>
+                        <td class="user">
+                            <img src="https://github.com/carolpascott.png" alt="Imagem de carolpascott">
+                            <a href="https://github.com/carolpascott" target="_blank">
+                                <p>Carol Pascott 02</p>
+                                <span>/carolpascott</span>
+                            </a>
+                        </td>
+                        <td class="repositories">xx</td>
+                        <td class="followers">xx</td>
+                        <td class="action"><button>Remover</button></td>
+                    </tr>  
+                    <!-- <tr class="no-favorite">
+                        <td colspan="4">
+                            <div class="no-favorite-image">
+                                <img src="/assets/star.svg" alt="imagem de uma estrela com expressão de inconformada">
+                                <span>Nenhum favorito ainda</span> 
+                            </div>
+                        </td>                                   
+                    </tr>    -->
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
