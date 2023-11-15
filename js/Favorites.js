@@ -7,7 +7,6 @@ export class Favorites {
         this.load()
 
     }
-
     // load() {
     //     this.entries = [
     //         {
@@ -57,7 +56,6 @@ export class Favorites {
         const filteredEntries = this.entries
             .filter(entry => entry.login !== user.login)
         
-
         this.entries = filteredEntries
         this.update()
         this.save()
@@ -105,9 +103,26 @@ export class FavoritesView extends Favorites {
         return tr
     }
 
-    update() {
-        this.removeAllTr()
+    createEmptyTable() {
+        const tr = document.createElement('tr')
 
+        tr.innerHTML = `
+        <tr class="no-favorite">
+        <td colspan="4">
+            <div class="no-favorite-image">
+                <img src="/assets/star.svg" alt="imagem de uma estrela com expressão de inconformada">
+                <span>Nenhum favorito ainda</span> 
+            </div>
+        </td>                                   
+    </tr>
+        `
+        return tr
+    }
+
+    update() {            
+        const dataExists = this.entries.length
+        
+        this.removeAllTr()
         this.entries.forEach(user => {
             const row = this.createRow()
             
@@ -118,29 +133,29 @@ export class FavoritesView extends Favorites {
             row.querySelector('.user a').href = `
                 https://github.com/${user.login}`
             row.querySelector('.user p').textContent = user.name
-            row.querySelector('.user span').textContent = user.login
+            row.querySelector('.user span').textContent = `/${user.login}`
             row.querySelector('.repositories').textContent = user.public_repos
-            row.querySelector('.followers').textContent = user.followers
-            
+            row.querySelector('.followers').textContent = user.followers            
             row.querySelector('.action').onclick = () => {
                 const remove = confirm('Remover usuário da tabela?')
 
                 if(remove) {
                     this.delete(user)
                 }
-            }
-            
+            }            
             this.tbody.append(row)
         })
+
+        if( !dataExists ) {
+            const row = this.createEmptyTable()
+            this.tbody.append(row)            
+        }
     }
     
     removeAllTr() {  
         this.tbody.querySelectorAll('tr')
             .forEach((tr) => {
                 tr.remove()
-            })       
-
-    }
+            })     
+    } 
 }
-
-

@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     font-size: 62.5%;
 
@@ -20,6 +21,7 @@
     --table-border-color: #4A808C;
     --no-table-color: #4E5455;
     --bg-color: #000000;
+    --bg-scroll: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -40,8 +42,7 @@ body * {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 8.7rem
-    
+    padding-bottom: 8.7rem    
 }
 
 /* screen reader only */
@@ -57,6 +58,7 @@ body * {
     white-space: nowrap;
     border-width: 0;
 }
+
 
 .search {
     display: flex;
@@ -101,6 +103,15 @@ body * {
     fill: var(--text-btn-color);
 }
 
+#btn-favorite:hover {
+    color: var(--button-color);
+    background: var(--text-btn-color);
+}
+
+#btn-favorite:hover svg path {
+    fill: var(--button-color);
+}
+
 #app button:hover,
 .action button:hover {
     filter: brightness(1.2);
@@ -131,8 +142,16 @@ table th {
     padding: 1.6rem 4.0rem;
 }
 
-table tbody tr {
+table th:nth-child(1) {
+    width: 44rem;
+}
+
+table tbody tr {    
     border-top: 1px solid var(--table-border-color);
+}
+
+table tbody tr:nth-child(1) {
+    border-top: none;
 }
 
 table tr:nth-child(even) {
@@ -144,6 +163,7 @@ table tr:nth-child(odd) {
 }
 
 table td {
+    height: 10.4rem;
     padding: 2.4rem 2.4rem 2.4rem 4.0rem;
 }
 
@@ -159,6 +179,7 @@ td.user {
     display: flex;
     align-items: center;
     gap: 1.6rem;
+    width: 44rem;
 }
 
 td.user span {
@@ -173,14 +194,51 @@ td.action button {
     cursor: pointer;
 }
 
+td.repositories,
+td.followers,
+td.action {
+    width: 20rem;
+}
+
+
+/* scroll */
+tbody {
+    display: block;
+    max-height: 45rem;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+thead tr,
+tbody tr {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+tbody::-webkit-scrollbar {
+    width: 2.2rem; 
+}
+
+tbody::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+tbody::-webkit-scrollbar-thumb {  
+    background-color: var(--table-border-color);
+    border-radius: 10px;
+    border: .8rem solid var(--bg-scroll);
+    background-clip: padding-box;  
+}
+
+
+ /* no favorite */
 .no-favorite-image {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6.0rem; 
-    padding: 10.0rem;
-
-    
+    padding: 10.0rem;    
 }
 
 .no-favorite span {
