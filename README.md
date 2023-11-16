@@ -14,7 +14,7 @@ O que foi abordado nesse desafio:
   <img alt="projeto GIT FAVORITE" src=".github/preview.jpg" width="100%">
 </p>
 
-- [Acesse o projeto finalizado, online](https://carolpascott.github.io/desafio_gitfav)
+- [Acesse o projeto finalizado, online](https://desafio-gitfav.vercel.app/)
 
 ## 🚀 Tecnologias
 
